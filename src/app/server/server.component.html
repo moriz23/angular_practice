@@ -1,11 +1,16 @@
 <!-- <label>Server</label>
 <input type="text" class="form-control" (input)="onUpdateServerName($event)">
 <p>{{ serverName }}</p> -->
+<div class="container">
+  <label>Server</label>
+  <input type="text" class="form-control" [(ngModel)]="serverName">
+  <p>Server with ID {{ serverId }} with {{ getServerStatus() }}</p>
+  <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+  <p [innerText]="allowNewServer"></p>
+  <p>{{ serverCreationStatus }}</p>
 
-<label>Server</label>
-<input type="text" class="form-control" [(ngModel)]="serverName">
-
-<p>Server with ID {{ serverId }} with {{ getServerStatus() }}</p>
-<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
-<p [innerText]="allowNewServer"></p>
-<p>{{ serverCreationStatus }}</p>
+  <input type="text" name="username" class='form-control' [(ngModel)]='username'>
+  <p>{{username}}</p>
+  <button class="btn btn-primary"[disabled]="username === ''" (click)="getUserName()" (click)="username = ''">Add Username</button>
+  <p>{{clickedUsername}}</p>
+</div>

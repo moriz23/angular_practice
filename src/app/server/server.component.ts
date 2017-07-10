@@ -9,12 +9,19 @@ export class ServerComponent {
   serverStatus: string = 'offline';
   serverCreationStatus = "No server was created"
   allowNewServer = false;
+  allowButton = false;
+  clickedUsername=''
   serverName = ''
+  username=''
 
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true
     }, 5000);
+  }
+
+  getUserName() {
+    this.clickedUsername = "Hello " + this.username
   }
 
   getServerStatus() {
