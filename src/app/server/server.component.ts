@@ -13,6 +13,7 @@ export class ServerComponent {
   clickedUsername=''
   serverName = ''
   username=''
+  serverCreated = false
 
   constructor() {
     setTimeout(() => {
@@ -30,6 +31,7 @@ export class ServerComponent {
 
   onCreateServer() {
     this.serverCreationStatus = "The Server " + this.serverName + " Was Created"
+    this.serverCreated = true
   }
 
   onUpdateServerName(event: any){

@@ -7,8 +7,9 @@
   <p>Server with ID {{ serverId }} with {{ getServerStatus() }}</p>
   <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
   <p [innerText]="allowNewServer"></p>
-  <p>{{ serverCreationStatus }}</p>
-
+<!--   <p>{{ serverCreationStatus }}</p>
+ -->
+ <p *ngIf="serverCreated">Server was created, server name is {{ serverName}}</p>
   <input type="text" name="username" class='form-control' [(ngModel)]='username'>
   <p>{{username}}</p>
   <button class="btn btn-primary"[disabled]="username === ''" (click)="getUserName()" (click)="username = ''">Add Username</button>
