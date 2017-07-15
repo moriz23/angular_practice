@@ -15,10 +15,14 @@ export class ServerComponent {
   username=''
   serverCreated = false
 
+  // constructor() {
+  //   setTimeout(() => {
+  //     this.allowNewServer = true
+  //   }, 5000);
+  // }
+
   constructor() {
-    setTimeout(() => {
-      this.allowNewServer = true
-    }, 5000);
+    this.serverStatus = Math.random() > 0.5 ? 'online': 'offline';
   }
 
   getUserName() {
